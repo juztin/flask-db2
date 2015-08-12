@@ -72,8 +72,9 @@ class DB2(object):
         """
         ctx = stack.top
         if ctx is not None:
-            ctx.ibm_db = self.connect()
-        return ctx.ibm_db
+            if not hasattr(ctx, 'ibm_db'):
+                ctx.ibm_db = self.connect()
+            return ctx.ibm_db
 
     def row_factory(self, cursor, row):
         """Returns a dictionary of {COLUMN: VALUE} for the given cursor/row.
