@@ -1,0 +1,5 @@
+recursive-include flask_db2 *
+include LICENSE
+include README.rst
+include changelog.rst
+include MANIFEST.in
