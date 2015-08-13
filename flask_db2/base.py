@@ -86,6 +86,8 @@ class DB2(object):
         :param cursor: db2 cursor
         :param row: db2 row
         """
+        if cursor is None or row is None:
+            return None
         d = {}
         for idx, col in enumerate(cursor.description):
             key = col[0]

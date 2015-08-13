@@ -3,6 +3,11 @@ Changelog
 
 .. currentmodule:: Flask-DB2
 
+Release 0.0a5
+-------------
+
+Checking for None type cursor/row in row_factory and returning None.
+
 Release 0.0a4
 -------------
 
