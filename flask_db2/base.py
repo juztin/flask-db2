@@ -80,7 +80,7 @@ class DB2(object):
                 ctx.ibm_db = self.connect()
             return ctx.ibm_db
 
-    def row_factory(self, cursor, row):
+    def row_factory(self, cursor, row, mapper=None):
         """Returns a dictionary of {COLUMN: VALUE} for the given cursor/row.
 
         :param cursor: db2 cursor
@@ -88,5 +88,8 @@ class DB2(object):
         """
         d = {}
         for idx, col in enumerate(cursor.description):
-            d[col[0]] = row[idx]
+            key = col[0]
+            if mapper is not None:
+                key = mapper.get(key, key)
+            d[key] = row[idx]
         return d
