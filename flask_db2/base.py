@@ -45,15 +45,16 @@ class DB2(object):
             config['DB2_USER'],
             config['DB2_PASSWORD'])
 
-    def connect(self):
+    def connect(self, config=None):
         """Returns a new database connection.
 
         When `DB2_POOL_CONNECTIONS` is true a connection supporting pooling
         is used.
         """
-        config = current_app.config
+        if config is None:
+            config = current_app.config
         conn_string = self._connection_string(config)
-        if current_app.config['DB2_POOL_CONNECTIONS']:
+        if config['DB2_POOL_CONNECTIONS']:
             connection = ibm_db.pconnect(conn_string, '', '')
         else:
             connection = ibm_db.connect(conn_string, '', '')
