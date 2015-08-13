@@ -50,6 +50,9 @@ class DB2(object):
 
         When `DB2_POOL_CONNECTIONS` is true a connection supporting pooling
         is used.
+
+        :param config: configuration object used to establish connections.
+                       current_app.config is used by default.
         """
         if config is None:
             config = current_app.config
