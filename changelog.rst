@@ -3,11 +3,15 @@ Changelog
 
 .. currentmodule:: Flask-DB2
 
+Release 0.0a4
+-------------
+
+Added example.py
+
 Release 0.0a3
 -------------
 
 Added config keyword arg to connect function, for custom connections.
-
 
 Release 0.0a2
 -------------
