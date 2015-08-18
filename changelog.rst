@@ -3,6 +3,11 @@ Changelog
 
 .. currentmodule:: Flask-DB2
 
+Release 0.0a6
+-------------
+
+Added DB2Error class to handle parsing out error codes/message.
+
 Release 0.0a5
 -------------
 

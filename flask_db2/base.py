@@ -6,7 +6,6 @@
     :license: BSD, see LICENSE for more details.
 """
 
-
 import ibm_db
 import ibm_db_dbi
 from flask import current_app
