@@ -3,6 +3,11 @@ Changelog
 
 .. currentmodule:: Flask-DB2
 
+Release 0.0a9
+-------------
+
+Revisits BUGFIX #4 - another Windows `lf+cr` issue.
+
 Release 0.0a8
 -------------
 

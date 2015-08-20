@@ -3,7 +3,7 @@ import re
 from ibm_db_dbi import Error
 
 
-db2_error_re = re.compile('^(\w+).*(SQL\d{4,5}N)\s{2,}(.*)\s{2,}SQLSTATE=(\d+)\sSQLCODE=(-\d+)')
+db2_error_re = re.compile('^(\w+).*(SQL\d{4,5}N)\s{2}(.*)\s{2}SQLSTATE=(\d+)[\s\\\\r]+SQLCODE=(-\d+)')
 
 
 class DB2Error(Exception):
