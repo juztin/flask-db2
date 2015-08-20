@@ -3,6 +3,17 @@ Changelog
 
 .. currentmodule:: Flask-DB2
 
+Release 0.0a8
+-------------
+
+BUGFIX #4 - Resolves an issue where on Windows the error message was including `lf+cr`
+            and the RegEx wasn't catching this.
+
+Release 0.0a7
+-------------
+
+Added try_parse method to DB2Error.
+
 Release 0.0a6
 -------------
 

@@ -3,7 +3,7 @@ import re
 from ibm_db_dbi import Error
 
 
-db2_error_re = re.compile('^(\w+).*(SQL\d{4,5}N)\s{2}(.*)\s{2}SQLSTATE=(\d+)\sSQLCODE=(-\d+)')
+db2_error_re = re.compile('^(\w+).*(SQL\d{4,5}N)\s{2,}(.*)\s{2,}SQLSTATE=(\d+)\sSQLCODE=(-\d+)')
 
 
 class DB2Error(Exception):
@@ -44,3 +44,15 @@ class DB2Error(Exception):
         sql_state = int(groups[3])
         sql_code = int(groups[4])
         return DB2Error(message, sql_error, sql_message, sql_state, sql_code)
+
+    @staticmethod
+    def try_parse(exception):
+        """Try to parse the exception to a DB2Error and return, otherwise
+        return the given exception unchanged.
+
+        :param exception: ibm_dbi_db Error
+        """
+        err = DB2Error.parse(exception)
+        if err is None:
+            return exception
+        return err
