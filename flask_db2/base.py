@@ -67,7 +67,10 @@ class DB2(object):
         """
         ctx = stack.top
         if hasattr(ctx, 'ibm_db'):
-            ctx.ibm_db.close()
+            try:
+                ctx.ibm_db.close()
+            except:
+                pass
 
     @property
     def connection(self):

@@ -9,7 +9,7 @@ with open('README.rst') as file:
 
 setup(
     name='Flask-DB2',
-    version='0.0.9',
+    version='0.0.10',
     url='http://github.com/juztin/flask-db2',
     license='BSD',
     author='Justin Wilson',

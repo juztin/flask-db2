@@ -3,6 +3,11 @@ Changelog
 
 .. currentmodule:: Flask-DB2
 
+Release 0.0a10
+-------------
+
+Wrapping connection.close with a try/except to avoid blow-ups.
+
 Release 0.0a9
 -------------
 
